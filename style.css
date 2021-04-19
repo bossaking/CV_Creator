@@ -1,0 +1,85 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f7f7;
+    
+}
+
+header{
+    background-color: #2dc46a;
+    padding: 20px;
+}
+
+header > h3{
+    text-transform: uppercase;
+    margin-left: 20%;
+    color: whitesmoke;
+    font-family: 'Signika', sans-serif;
+    font-weight: 700;
+}
+
+.btn{
+    font-family: 'Signika', sans-serif;
+}
+
+.main-form{
+    position: inherit;
+    border-radius: 5px;
+    background-color: #ffffff;
+    max-width: 50%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    box-shadow: 2px 2px 15px #888888;
+    font-family: 'Signika', sans-serif;
+}
+
+.history-form{
+    position: inherit;
+    border-radius: 5px;
+    background-color: #ffffff;
+    max-width: 50%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    box-shadow: 2px 2px 15px #888888;
+    font-family: 'Signika', sans-serif;
+}
+
+.history-form > h4{
+    cursor: pointer;
+}
+
+.content{
+    position: relative;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#additional-informations{
+    overflow: hidden;
+}
+
+.slider {
+    transition:all .5s ease-in-out;
+    height:0px;
+}
+.slider.open {
+    height:425px;
+}
+
+select{
+    color: black;
+}
+
