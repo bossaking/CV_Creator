@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script src="node_modules/dropify/dist/js/dropify.js"></script>
+    <link rel="stylesheet" href="node_modules/dropify/dist/css/dropify.css">
+    <link rel="stylesheet" href="node_modules/dropify/dist/fonts/">
+    <script src="js/history.js"></script>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/27.0.0/classic/ckeditor.js"></script>
+
+    <title>CV Creator</title>
+</head>
+
+<body>
+
+    <header>
+        <h3>creator cv</h3>
+    </header>
+
+    <div class="content">
+
+        <svg viewBox="0 0 500 200" preserveAspectRatio="xMinYMin meet">
+            <path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style="stroke: none; fill:#2dc46a;"></path>
+        </svg>
+
+        <form class="history-form" id="history-form">
+            <h4>Doświadczenie zawodowe</h4>
+
+            <div id="hidden-content" class="d-none">
+
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Nazwa zawodu</label>
+                            <input type="text" placeholder="np. kierownik sprzedaży" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Miasto / miejscowość</label>
+                            <input type="text" autocomplete="off" name="meta.city" placeholder="np. Warszawa"
+                                class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Pracodawca</label>
+                    <input type="text" placeholder="np. PwC" class="form-control">
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Data rozpoczęcia</label>
+                            <input type="date" autocomplete="off" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Data zakończenia</label>
+                            <input type="date" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Opis</label>
+                    <div id="editor" class="editor"></div>
+                </div>
+
+                <button type="submit" class="btn btn-info btn-block">&#x2b; Dodaj kolejne doświadczenie
+                    zawodowe</button>
+
+            </div>
+
+        </form>
+
+        <form class="history-form" id="history-form">
+            <h4>Wykształcenie i kwalifikacje</h4>
+
+            <div id="hidden-content" class="d-none">
+
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Stopień / poziom</label>
+                            <input type="text" placeholder="np. licencjat" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Miasto / miejscowość</label>
+                            <input type="text" autocomplete="off" name="meta.city" placeholder="np. Warszawa"
+                                class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Szkoła / uczelnia</label>
+                    <input type="text" placeholder="np. Politechnika Białostocka" class="form-control">
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Data rozpoczęcia</label>
+                            <input type="date" autocomplete="off" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Data zakończenia</label>
+                            <input type="date" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Opis</label>
+                    <div id="editor" class="editor"></div>
+                </div>
+
+                <button type="submit" class="btn btn-info btn-block">&#x2b; Dodaj kolejne wykształcenie</button>
+
+            </div>
+
+        </form>
+
+        <form class="history-form" id="history-form">
+            <h4>Języki</h4>
+
+            <div id="hidden-content" class="d-none">
+
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Język</label>
+                            <input type="text" placeholder="np. hiszpański" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Poziom</label>
+                            <select class="custom-select">
+                                <option>Wybierz</option>
+                                <option>Język ojczysty / Poziom osoby władającej językiem ojczystym</option>
+                                <option>Biegła znajomość w mowie i piśmie</option>
+                                <option>Bardzo dobra znajomość</option>
+                                <option>Wiedza praktyczna na dobrym poziomie</option>
+                                <option>Wiedza praktyczna</option>
+                                <option>A1</option>
+                                <option>A2</option>
+                                <option>B1</option>
+                                <option>B2</option>
+                                <option>C1</option>
+                                <option>C2</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-info btn-block">&#x2b; Dodaj kolejny język</button>
+
+            </div>
+
+        </form>
+
+        <form class="history-form" id="history-form">
+            <h4>Umiejętności</h4>
+
+            <div id="hidden-content" class="d-none">
+
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Umiejętność</label>
+                            <input type="text" placeholder="np. obsługa Microsoft Word" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label>Poziom</label>
+                            <select class="custom-select">
+                                <option>Wybierz poziom</option>
+                                <option>Zaawansowany</option>
+                                <option>Doświadczony</option>
+                                <option>Wprawiony</option>
+                                <option>Początkujący</option>
+                                <option>Nowicjusz</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-info btn-block">&#x2b; Dodaj kolejną umiejętność</button>
+
+            </div>
+
+        </form>
+
+        <form class="history-form" id="history-form">
+            <h4>Hobby i zainteresowania</h4>
+
+            <div id="hidden-content" class="d-none">
+
+                <hr>
+
+                <div class="form-group">
+                    <label>Hobby</label>
+                    <input type="text" placeholder="np. wędrówki" class="form-control">
+                </div>
+
+
+
+
+                <button type="submit" class="btn btn-info btn-block">&#x2b; Dodaj kolejne hobby</button>
+            </div>
+        </form>
+
+    </div>
+
+    </form>
+
+    </div>
+
+</body>
+
+</html>
